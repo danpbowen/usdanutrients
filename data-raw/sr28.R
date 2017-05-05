@@ -4,7 +4,7 @@ library(devtools)
 parse_file <- function(x, y) {
   file <- unz(y, x, encoding = "ISO-8859-1")
   read.delim(file, sep = "^", quote = "~", na.strings = c("^^", "~~"),
-             header = FALSE, stringsAsFactors = FALSE) %>% tbl_df()
+             header = FALSE, stringsAsFactors = FALSE, encoding = "latin1") %>% tbl_df()
 }
 
 temp <- tempfile()
